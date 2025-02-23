@@ -70,7 +70,7 @@ const App = () => {
         <nav className="flex justify-center gap-10 py-4 bg-gradient-to-r from-indigo-800 via-purple-800 to-pink-800 text-white text-lg shadow-2xl rounded-b-lg px-6 border-b-4 border-yellow-300">
           <Link to="/" className="hover:text-yellow-300 font-semibold transition duration-300"> Welcome Haven 🌟 </Link>
           <Link to="/wishes" className="hover:text-yellow-300 font-semibold transition duration-300"> Heartfelt Wishes 💖</Link>
-          <Link to="/images" className="hover:text-yellow-300 font-semibold transition duration-300">📸 Timeless Treasures ⏳</Link>
+          <Link to="/images" className="hover:text-yellow-300 font-semibold transition duration-300"> Timeless Treasures ⏳</Link>
         </nav>
         <div className="flex-grow flex flex-col">
           <Routes>
