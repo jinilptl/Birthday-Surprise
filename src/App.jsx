@@ -25,6 +25,7 @@ import image10 from "../src/assets/images/img23.png"
 
 import welcomeAudio from "../src/assets/audio/Khaabon.mp3";
 import galleryAudio from "../src/assets/audio/Khoobsurat.mp3";
+import wishesAudio from "../src/assets/audio/wihses_song.mp3";
 
 import { FaPause, FaPlay } from "react-icons/fa";
 const images = [image1, image2, image3, image4, image5,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15];
@@ -132,6 +133,8 @@ const WelcomePage = () => {
 const Wishes = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const audio = new Audio(wishesAudio);
 
   useEffect(() => {
     if (!isPaused) {
@@ -142,8 +145,18 @@ const Wishes = () => {
     }
   }, [isPaused]);
 
+  useEffect(() => {
+    if (isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    return () => {
+      audio.pause();
+    };
+  }, [isPlaying]);
+
   return (
-   
     <div className="flex flex-col items-center justify-center h-full flex-grow relative bg-gradient-to-r from-yellow-200 via-pink-300 to-purple-400 p-6 text-center overflow-hidden">
       <Confetti numberOfPieces={50} recycle={false} />
       <AnimatePresence mode="wait">
@@ -158,17 +171,30 @@ const Wishes = () => {
           <p className="text-3xl drop-shadow-md">{wishes[currentIndex]}</p>
         </motion.div>
       </AnimatePresence>
+
+      {/* Wishes Animation Pause Button */}
       <button
         onClick={() => setIsPaused(!isPaused)}
         className="absolute right-4 top-60 bg-white text-pink-700 px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:bg-pink-200 transition "
       >
         {isPaused ? <FaPlay /> : <FaPause />} {isPaused ? "Resume wishes" : "Pause wishes"}
       </button>
-      <h2 className="absolute right-4 top-80  bg-white text-pink-700 px-3 py-2 rounded-lg shadow-md text-sm font-semibold w-[210px] text-justify">⏸️ Ye button se wishes ki animation rok sakte ho aur phir resume bhi kar sakte ho!</h2>
+
+      {/* Music Play/Pause Button */}
+      <button
+        onClick={() => setIsPlaying(!isPlaying)}
+        className="absolute bottom-5 right-5 bg-white text-pink-700 px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:bg-pink-200 transition"
+      >
+        {isPlaying ? <FaPause /> : <FaPlay />} {isPlaying ? "Pause Music" : "Play Music"}
+      </button>
+
+      <h2 className="absolute right-4 top-80 bg-white text-pink-700 px-3 py-2 rounded-lg shadow-md text-sm font-semibold w-[210px] text-justify">
+        ⏸️ Ye button se wishes ki animation rok sakte ho aur music bhi control kar sakte ho!
+      </h2>
     </div>
-  
   );
 };
+
 
 const Images = () => {
   const [selectedImage, setSelectedImage] = useState(null);
