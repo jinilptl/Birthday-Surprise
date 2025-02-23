@@ -23,9 +23,9 @@ import image4 from "../src/assets/images/img21.png"
 import image14 from "../src/assets/images/img22.png"
 import image10 from "../src/assets/images/img23.png"
 
-import welcomeAudio from "../src/assets/audio/Khaabon.mp3";
-import galleryAudio from "../src/assets/audio/Khoobsurat.mp3";
-import wishesAudio from "../src/assets/audio/wihses_song.mp3";
+import welcomeAudio from "../src/assets/audio/new_first_page_song.mp3";
+import galleryAudio from "../src/assets/audio/Trimmed_Khoobsurat.mp3";
+import wishesAudio from "../src/assets/audio/Trimmed_Raabta_Instrumental.mp3";
 
 import { FaPause, FaPlay } from "react-icons/fa";
 const images = [image1, image2, image3, image4, image5,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15];
@@ -91,20 +91,20 @@ const App = () => {
 const WelcomePage = () => {
   return (
     <PageWithAudio audioSrc={welcomeAudio} content={
-    <div className="flex flex-col items-center justify-center h-full flex-grow relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-full flex-grow relative overflow-hidden px-4 sm:px-6 md:px-8">
       <Confetti numberOfPieces={100} recycle={false} />
       <motion.h2 
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1.5 }} 
-        className="text-4xl font-bold text-yellow-300 mb-9 drop-shadow-lg mt-15"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 mb-6 drop-shadow-lg mt-10 text-center"
       >
         🎉 Happy Birthday Maitri 🎉
       </motion.h2>
       <motion.img 
         src={image1} 
         alt="Birthday Celebration"
-        className="w-60 h-60 object-cover rounded-lg shadow-md border-4 border-white mb-6"
+        className="w-40 h-40 sm:w-60 sm:h-60 object-cover rounded-lg shadow-md border-4 border-white mb-4"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
@@ -113,7 +113,7 @@ const WelcomePage = () => {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1.5 }} 
-        className="text-4xl font-bold text-yellow-300 mb-9 drop-shadow-lg"
+        className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-300 mb-6 drop-shadow-lg text-center"
       >
         🎉 Many Many Happy Returns Of The Day 🎉
       </motion.h1>
@@ -121,9 +121,9 @@ const WelcomePage = () => {
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 1.5, delay: 0.5 }} 
-        className="text-2xl text-white"
+        className="text-sm sm:text-lg md:text-2xl text-white text-center px-2"
       >
-        Ek chhota sa digital surprise, specially coded just for you Maitri ! 🎁💻 - From your coder friend 😊
+        Ek chhota sa digital surprise, specially coded just for you Maitri! 🎁💻 - From your coder friend 😊
       </motion.p>
     </div>
     } />
