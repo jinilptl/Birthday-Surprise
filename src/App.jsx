@@ -203,12 +203,12 @@ const Images = () => {
     <PageWithAudio audioSrc={galleryAudio} content={
     <div className="h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
     <div className="p-6 flex flex-col bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
-      <h2 className="text-4xl font-extrabold text-center mb-8 text-yellow-300 drop-shadow-lg">
-        📸 Memories Gallery
-      </h2>
-      <h2 className="text-3xl font-bold text-center mb-8 text-yellow-600 drop-shadow-lg">
-         Happy Moments Of Your Life !😊
-      </h2>
+    <h2 className="text-3xl font-extrabold text-center mb-5 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 drop-shadow-lg">
+  Captured Moments : A Glimpse into Timeless Memories ✨
+</h2>
+<h2 className="text-3xl font-bold text-center mb-10 text-white drop-shadow-xl">
+  Happy Moments Of Your Life !😊
+</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {images.map((img, index) => (
           <motion.div
