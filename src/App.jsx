@@ -39,7 +39,7 @@ import image28 from "../src/assets/images/n_img13.png"
 import image29 from "../src/assets/images/n_img14.png"
 
 
-import welcomeAudio from "../src/assets/audio/new_first_page_song.mp3";
+import welcomeAudio from "../src/assets/audio/HAPPY_BIRTHDAY_INSTRUMENTAL_trimmed.mp3";
 import galleryAudio from "../src/assets/audio/Trimmed_Khoobsurat.mp3";
 import wishesAudio from "../src/assets/audio/Trimmed_Raabta_Instrumental.mp3";
 
@@ -113,14 +113,14 @@ const WelcomePage = () => {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1.5 }} 
-        className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 mb-6 drop-shadow-lg mt-10 text-center"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-300 mb-8 drop-shadow-lg mt-10 text-center"
       >
         🎉 Happy Birthday Maitri 🎉
       </motion.h2>
       <motion.img 
         src={image1} 
         alt="Birthday Celebration"
-        className="w-40 h-40 sm:w-60 sm:h-60 object-cover rounded-lg shadow-md border-4 border-white mb-4"
+        className="w-40 h-40 sm:w-60 sm:h-60 object-cover rounded-lg shadow-md border-4 border-white mb-8"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
