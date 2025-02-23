@@ -23,12 +23,28 @@ import image4 from "../src/assets/images/img21.png"
 import image14 from "../src/assets/images/img22.png"
 import image10 from "../src/assets/images/img23.png"
 
+import image16 from "../src/assets/images/n_img1.png"
+import image17 from "../src/assets/images/n_img2.png"
+import image18 from "../src/assets/images/n_img3.png"
+import image19 from "../src/assets/images/n_img4.png"
+import image20 from "../src/assets/images/n_img5.png"
+import image21 from "../src/assets/images/n_img6.png"
+import image22 from "../src/assets/images/n_img7.png"
+import image23 from "../src/assets/images/n_img8.png"
+import image24 from "../src/assets/images/n_img9.png"
+import image25 from "../src/assets/images/n_img10.png"
+import image26 from "../src/assets/images/n_img11.png"
+import image27 from "../src/assets/images/n_img12.png"
+import image28 from "../src/assets/images/n_img13.png"
+import image29 from "../src/assets/images/n_img14.png"
+
+
 import welcomeAudio from "../src/assets/audio/new_first_page_song.mp3";
 import galleryAudio from "../src/assets/audio/Trimmed_Khoobsurat.mp3";
 import wishesAudio from "../src/assets/audio/Trimmed_Raabta_Instrumental.mp3";
 
 import { FaPause, FaPlay } from "react-icons/fa";
-const images = [image1, image2, image3, image4, image5,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15];
+const images = [image1, image2, image3, image4, image5,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15,image16,image17,image18,image19,image20,image21,image22,image23,image24,image25,image26,image27,];
 const breakpointColumns = {
   default: 3,
   1100: 2,
