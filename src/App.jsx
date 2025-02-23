@@ -23,6 +23,9 @@ import image4 from "../src/assets/images/img21.png"
 import image14 from "../src/assets/images/img22.png"
 import image10 from "../src/assets/images/img23.png"
 
+import welcomeAudio from "../src/assets/audio/Khaabon.mp3";
+import galleryAudio from "../src/assets/audio/Khoobsurat.mp3";
+
 import { FaPause, FaPlay } from "react-icons/fa";
 const images = [image1, image2, image3, image4, image5,image6,image7,image8,image9,image10,image11,image12,image13,image14,image15];
 const breakpointColumns = {
@@ -86,13 +89,14 @@ const App = () => {
 
 const WelcomePage = () => {
   return (
+    <PageWithAudio audioSrc={welcomeAudio} content={
     <div className="flex flex-col items-center justify-center h-full flex-grow relative overflow-hidden">
       <Confetti numberOfPieces={100} recycle={false} />
       <motion.h2 
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1 }} 
         transition={{ duration: 1.5 }} 
-        className="text-4xl font-bold text-yellow-300 mb-9 drop-shadow-lg"
+        className="text-4xl font-bold text-yellow-300 mb-9 drop-shadow-lg mt-15"
       >
         🎉 Happy Birthday Maitri 🎉
       </motion.h2>
@@ -121,6 +125,7 @@ const WelcomePage = () => {
         Ek chhota sa digital surprise, specially coded just for you Maitri ! 🎁💻 - From your coder friend 😊
       </motion.p>
     </div>
+    } />
   );
 };
 
@@ -138,6 +143,7 @@ const Wishes = () => {
   }, [isPaused]);
 
   return (
+   
     <div className="flex flex-col items-center justify-center h-full flex-grow relative bg-gradient-to-r from-yellow-200 via-pink-300 to-purple-400 p-6 text-center overflow-hidden">
       <Confetti numberOfPieces={50} recycle={false} />
       <AnimatePresence mode="wait">
@@ -160,6 +166,7 @@ const Wishes = () => {
       </button>
       <h2 className="absolute right-4 top-80  bg-white text-pink-700 px-3 py-2 rounded-lg shadow-md text-sm font-semibold w-[210px] text-justify">⏸️ Ye button se wishes ki animation rok sakte ho aur phir resume bhi kar sakte ho!</h2>
     </div>
+  
   );
 };
 
@@ -167,6 +174,7 @@ const Images = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
+    <PageWithAudio audioSrc={galleryAudio} content={
     <div className="h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
     <div className="p-6 flex flex-col bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
       <h2 className="text-4xl font-extrabold text-center mb-8 text-yellow-300 drop-shadow-lg">
@@ -221,7 +229,32 @@ const Images = () => {
       )}
     </div>
     </div>
+    } />
   );
 };
+const PageWithAudio = ({ audioSrc, content }) => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const audio = new Audio(audioSrc);
+  audio.loop = true;
 
+  useEffect(() => {
+    if (isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+    return () => {
+      audio.pause();
+    };
+  }, [isPlaying]);
+
+  return (
+    <div>
+      {content}
+      <button onClick={() => setIsPlaying(!isPlaying)} className="fixed bottom-5 right-5 bg-white p-3 rounded-full shadow-lg">
+        {isPlaying ? <FaPause /> : <FaPlay />}
+      </button>
+    </div>
+  );
+};
 export default App;
